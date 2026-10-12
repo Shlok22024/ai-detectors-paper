@@ -1,0 +1,52 @@
+{
+  "source_revision": "a8bcd10fbe1f522fe47fd56f4fc75a54f36a276c",
+  "source_url": "https://huggingface.co/datasets/yuxixia/AI-detector-generalization-benchmark/resolve/a8bcd10fbe1f522fe47fd56f4fc75a54f36a276c/data/linguistic_analysis.csv",
+  "source_sha256": "3983ed4e82550f8ab3bdfbbb37a60b89389ae250e36830ef6919e5b297550afc",
+  "source_rows": 431431,
+  "selected_rows": 12000,
+  "source_items": 6000,
+  "label_definition": {
+    "0": "human",
+    "1": "AI"
+  },
+  "missing_or_sentinel_fields": {
+    "text": 0,
+    "label": 0,
+    "model": 0,
+    "prompt_style": 0,
+    "source": 0,
+    "item_id": 0
+  },
+  "invalid_labels": 0,
+  "unpaired_source_items": 0,
+  "formatting_modified_rows": 13,
+  "duplicate_checks": {
+    "exact_excess": 0,
+    "whitespace_normalized_excess": 0
+  },
+  "near_duplicate_rule": "Jaccard >= 0.80 on sets of casefolded word 5-grams",
+  "candidate_comparisons": 0,
+  "near_duplicate_pairs": 0,
+  "cross_source_near_duplicate_pairs": 0,
+  "leakage_components": 6000,
+  "seed": 42,
+  "split_strategy": {
+    "cross_domain_components_excluded": 0,
+    "abstract_source_group_targets": {
+      "train": 1500,
+      "validation": 510,
+      "test_familiar": 990
+    },
+    "actual_abstract_source_groups": {
+      "train": 1500,
+      "validation": 510,
+      "test_familiar": 990
+    },
+    "shifted_source_group_target": 990,
+    "actual_shifted_source_groups": 990
+  },
+  "source_group_split_overlap": 0,
+  "component_split_overlap": 0,
+  "processed_sha256": "63d5cd936eb628850454dfbeb05541288191334b0fc2afa1d41dda84bfe061f1",
+  "manifest_sha256": "57868a78ad6b02f56e7dd4c33e3af8a6aa1515df04221a1a9e3cbc6089a1b611"
+}
