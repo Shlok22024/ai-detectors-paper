@@ -1,0 +1,569 @@
+{
+  "verified_on": "2026-10-12",
+  "status": "Phase 0 only; owner approval pending; no model fitting",
+  "inspection_limitations": [
+    "No near-duplicate audit performed",
+    "No independent validation",
+    "RAID prefix only",
+    "Stylometric CSV prefix only",
+    "Original split membership unavailable in inspected headers"
+  ],
+  "repositories": {
+    "Generalization-of-AI-text-Detector": {
+      "revision": "316184f7d87659f8d348685dc6967c3b0e0cb235",
+      "tree_truncated": false
+    },
+    "EvoBench": {
+      "revision": "4c866cd211499744d21d34cbf2f32594064047c0",
+      "tree_truncated": false,
+      "license_files": [],
+      "python_files": [],
+      "raw_json_file_count": 226
+    },
+    "raid": {
+      "revision": "02b8dda330834149218fe03076f5b26295eb6aec",
+      "tree_truncated": false
+    }
+  },
+  "main_file_full_audit": {
+    "verification_date": "2026-10-12",
+    "file": "data/linguistic_analysis.csv",
+    "dataset_revision": "a8bcd10fbe1f522fe47fd56f4fc75a54f36a276c",
+    "bytes": 743557706,
+    "sha256": "3983ed4e82550f8ab3bdfbbb37a60b89389ae250e36830ef6919e5b297550afc",
+    "rows": 431431,
+    "columns": [
+      "",
+      "text",
+      "MATTR",
+      "L_MATTR",
+      "LEX_DEN",
+      "UNIQUE_WORDS",
+      "FLESCH",
+      "GUNNING_FOG",
+      "AVG_SENT_LEN",
+      "LONG_SENTS",
+      "SHORT_SENTS",
+      "SENT_LEN_STD",
+      "len_in_characters",
+      "label",
+      "prompt_style",
+      "model",
+      "item_id",
+      "source",
+      "polarity",
+      "subjectivity"
+    ],
+    "counts": {
+      "label": {
+        "1": 419431,
+        "0": 12000
+      },
+      "model": {
+        "qwen32b": 59998,
+        "llama3.3": 60000,
+        "mistral": 59980,
+        "solar": 59461,
+        "qwen72b": 59995,
+        "deepseek": 59998,
+        "qwen14b": 59999,
+        "human": 12000
+      },
+      "source": {
+        "reviews": 107998,
+        "qa": 108000,
+        "abstracts": 107972,
+        "news": 107461
+      },
+      "prompt_style": {
+        "zero_shot_baseline": 84000,
+        "chain_of_thought_one_shot": 84000,
+        "chain_of_thought_zero_shot": 84000,
+        "style_information_style_example": 84000,
+        "in_context_learning_3-shot": 83431,
+        "human": 12000
+      }
+    },
+    "missing_required_fields": {},
+    "cell_counts": {
+      "abstracts|deepseek|chain_of_thought_one_shot": 3000,
+      "abstracts|deepseek|chain_of_thought_zero_shot": 3000,
+      "abstracts|deepseek|in_context_learning_3-shot": 2999,
+      "abstracts|deepseek|style_information_style_example": 3000,
+      "abstracts|deepseek|zero_shot_baseline": 3000,
+      "abstracts|human|human": 3000,
+      "abstracts|llama3.3|chain_of_thought_one_shot": 3000,
+      "abstracts|llama3.3|chain_of_thought_zero_shot": 3000,
+      "abstracts|llama3.3|in_context_learning_3-shot": 3000,
+      "abstracts|llama3.3|style_information_style_example": 3000,
+      "abstracts|llama3.3|zero_shot_baseline": 3000,
+      "abstracts|mistral|chain_of_thought_one_shot": 3000,
+      "abstracts|mistral|chain_of_thought_zero_shot": 3000,
+      "abstracts|mistral|in_context_learning_3-shot": 2980,
+      "abstracts|mistral|style_information_style_example": 3000,
+      "abstracts|mistral|zero_shot_baseline": 3000,
+      "abstracts|qwen14b|chain_of_thought_one_shot": 3000,
+      "abstracts|qwen14b|chain_of_thought_zero_shot": 3000,
+      "abstracts|qwen14b|in_context_learning_3-shot": 2999,
+      "abstracts|qwen14b|style_information_style_example": 3000,
+      "abstracts|qwen14b|zero_shot_baseline": 3000,
+      "abstracts|qwen32b|chain_of_thought_one_shot": 3000,
+      "abstracts|qwen32b|chain_of_thought_zero_shot": 3000,
+      "abstracts|qwen32b|in_context_learning_3-shot": 2998,
+      "abstracts|qwen32b|style_information_style_example": 3000,
+      "abstracts|qwen32b|zero_shot_baseline": 3000,
+      "abstracts|qwen72b|chain_of_thought_one_shot": 3000,
+      "abstracts|qwen72b|chain_of_thought_zero_shot": 3000,
+      "abstracts|qwen72b|in_context_learning_3-shot": 2996,
+      "abstracts|qwen72b|style_information_style_example": 3000,
+      "abstracts|qwen72b|zero_shot_baseline": 3000,
+      "abstracts|solar|chain_of_thought_one_shot": 3000,
+      "abstracts|solar|chain_of_thought_zero_shot": 3000,
+      "abstracts|solar|in_context_learning_3-shot": 3000,
+      "abstracts|solar|style_information_style_example": 3000,
+      "abstracts|solar|zero_shot_baseline": 3000,
+      "news|deepseek|chain_of_thought_one_shot": 3000,
+      "news|deepseek|chain_of_thought_zero_shot": 3000,
+      "news|deepseek|in_context_learning_3-shot": 3000,
+      "news|deepseek|style_information_style_example": 3000,
+      "news|deepseek|zero_shot_baseline": 3000,
+      "news|human|human": 3000,
+      "news|llama3.3|chain_of_thought_one_shot": 3000,
+      "news|llama3.3|chain_of_thought_zero_shot": 3000,
+      "news|llama3.3|in_context_learning_3-shot": 3000,
+      "news|llama3.3|style_information_style_example": 3000,
+      "news|llama3.3|zero_shot_baseline": 3000,
+      "news|mistral|chain_of_thought_one_shot": 3000,
+      "news|mistral|chain_of_thought_zero_shot": 3000,
+      "news|mistral|in_context_learning_3-shot": 3000,
+      "news|mistral|style_information_style_example": 3000,
+      "news|mistral|zero_shot_baseline": 3000,
+      "news|qwen14b|chain_of_thought_one_shot": 3000,
+      "news|qwen14b|chain_of_thought_zero_shot": 3000,
+      "news|qwen14b|in_context_learning_3-shot": 3000,
+      "news|qwen14b|style_information_style_example": 3000,
+      "news|qwen14b|zero_shot_baseline": 3000,
+      "news|qwen32b|chain_of_thought_one_shot": 3000,
+      "news|qwen32b|chain_of_thought_zero_shot": 3000,
+      "news|qwen32b|in_context_learning_3-shot": 3000,
+      "news|qwen32b|style_information_style_example": 3000,
+      "news|qwen32b|zero_shot_baseline": 3000,
+      "news|qwen72b|chain_of_thought_one_shot": 3000,
+      "news|qwen72b|chain_of_thought_zero_shot": 3000,
+      "news|qwen72b|in_context_learning_3-shot": 2999,
+      "news|qwen72b|style_information_style_example": 3000,
+      "news|qwen72b|zero_shot_baseline": 3000,
+      "news|solar|chain_of_thought_one_shot": 3000,
+      "news|solar|chain_of_thought_zero_shot": 3000,
+      "news|solar|in_context_learning_3-shot": 2462,
+      "news|solar|style_information_style_example": 3000,
+      "news|solar|zero_shot_baseline": 3000,
+      "qa|deepseek|chain_of_thought_one_shot": 3000,
+      "qa|deepseek|chain_of_thought_zero_shot": 3000,
+      "qa|deepseek|in_context_learning_3-shot": 3000,
+      "qa|deepseek|style_information_style_example": 3000,
+      "qa|deepseek|zero_shot_baseline": 3000,
+      "qa|human|human": 3000,
+      "qa|llama3.3|chain_of_thought_one_shot": 3000,
+      "qa|llama3.3|chain_of_thought_zero_shot": 3000,
+      "qa|llama3.3|in_context_learning_3-shot": 3000,
+      "qa|llama3.3|style_information_style_example": 3000,
+      "qa|llama3.3|zero_shot_baseline": 3000,
+      "qa|mistral|chain_of_thought_one_shot": 3000,
+      "qa|mistral|chain_of_thought_zero_shot": 3000,
+      "qa|mistral|in_context_learning_3-shot": 3000,
+      "qa|mistral|style_information_style_example": 3000,
+      "qa|mistral|zero_shot_baseline": 3000,
+      "qa|qwen14b|chain_of_thought_one_shot": 3000,
+      "qa|qwen14b|chain_of_thought_zero_shot": 3000,
+      "qa|qwen14b|in_context_learning_3-shot": 3000,
+      "qa|qwen14b|style_information_style_example": 3000,
+      "qa|qwen14b|zero_shot_baseline": 3000,
+      "qa|qwen32b|chain_of_thought_one_shot": 3000,
+      "qa|qwen32b|chain_of_thought_zero_shot": 3000,
+      "qa|qwen32b|in_context_learning_3-shot": 3000,
+      "qa|qwen32b|style_information_style_example": 3000,
+      "qa|qwen32b|zero_shot_baseline": 3000,
+      "qa|qwen72b|chain_of_thought_one_shot": 3000,
+      "qa|qwen72b|chain_of_thought_zero_shot": 3000,
+      "qa|qwen72b|in_context_learning_3-shot": 3000,
+      "qa|qwen72b|style_information_style_example": 3000,
+      "qa|qwen72b|zero_shot_baseline": 3000,
+      "qa|solar|chain_of_thought_one_shot": 3000,
+      "qa|solar|chain_of_thought_zero_shot": 3000,
+      "qa|solar|in_context_learning_3-shot": 3000,
+      "qa|solar|style_information_style_example": 3000,
+      "qa|solar|zero_shot_baseline": 3000,
+      "reviews|deepseek|chain_of_thought_one_shot": 3000,
+      "reviews|deepseek|chain_of_thought_zero_shot": 3000,
+      "reviews|deepseek|in_context_learning_3-shot": 2999,
+      "reviews|deepseek|style_information_style_example": 3000,
+      "reviews|deepseek|zero_shot_baseline": 3000,
+      "reviews|human|human": 3000,
+      "reviews|llama3.3|chain_of_thought_one_shot": 3000,
+      "reviews|llama3.3|chain_of_thought_zero_shot": 3000,
+      "reviews|llama3.3|in_context_learning_3-shot": 3000,
+      "reviews|llama3.3|style_information_style_example": 3000,
+      "reviews|llama3.3|zero_shot_baseline": 3000,
+      "reviews|mistral|chain_of_thought_one_shot": 3000,
+      "reviews|mistral|chain_of_thought_zero_shot": 3000,
+      "reviews|mistral|in_context_learning_3-shot": 3000,
+      "reviews|mistral|style_information_style_example": 3000,
+      "reviews|mistral|zero_shot_baseline": 3000,
+      "reviews|qwen14b|chain_of_thought_one_shot": 3000,
+      "reviews|qwen14b|chain_of_thought_zero_shot": 3000,
+      "reviews|qwen14b|in_context_learning_3-shot": 3000,
+      "reviews|qwen14b|style_information_style_example": 3000,
+      "reviews|qwen14b|zero_shot_baseline": 3000,
+      "reviews|qwen32b|chain_of_thought_one_shot": 3000,
+      "reviews|qwen32b|chain_of_thought_zero_shot": 3000,
+      "reviews|qwen32b|in_context_learning_3-shot": 3000,
+      "reviews|qwen32b|style_information_style_example": 3000,
+      "reviews|qwen32b|zero_shot_baseline": 3000,
+      "reviews|qwen72b|chain_of_thought_one_shot": 3000,
+      "reviews|qwen72b|chain_of_thought_zero_shot": 3000,
+      "reviews|qwen72b|in_context_learning_3-shot": 3000,
+      "reviews|qwen72b|style_information_style_example": 3000,
+      "reviews|qwen72b|zero_shot_baseline": 3000,
+      "reviews|solar|chain_of_thought_one_shot": 3000,
+      "reviews|solar|chain_of_thought_zero_shot": 3000,
+      "reviews|solar|in_context_learning_3-shot": 2999,
+      "reviews|solar|style_information_style_example": 3000,
+      "reviews|solar|zero_shot_baseline": 3000
+    },
+    "candidate_subset": {
+      "generator": "mistral",
+      "ai_prompt": "zero_shot_baseline",
+      "domains": {
+        "abstracts": {
+          "human_rows": 3000,
+          "ai_rows": 3000,
+          "unique_source_items": 3000,
+          "one_human_one_ai_groups": 3000,
+          "length_characters": {
+            "human": {
+              "min": 1001,
+              "median": 1317.0,
+              "p10": 1058,
+              "p90": 1747,
+              "max": 2289
+            },
+            "mistral": {
+              "min": 571,
+              "median": 1044.5,
+              "p10": 814,
+              "p90": 1373,
+              "max": 2542
+            }
+          },
+          "exact_duplicate_excess": 0,
+          "whitespace_normalized_duplicate_excess": 0,
+          "human_ids_first": [
+            0,
+            1,
+            2
+          ]
+        },
+        "news": {
+          "human_rows": 3000,
+          "ai_rows": 3000,
+          "unique_source_items": 3000,
+          "one_human_one_ai_groups": 3000,
+          "length_characters": {
+            "human": {
+              "min": 944,
+              "median": 3570.5,
+              "p10": 1788,
+              "p90": 6635,
+              "max": 10865
+            },
+            "mistral": {
+              "min": 645,
+              "median": 2929.0,
+              "p10": 2052,
+              "p90": 3843,
+              "max": 16834
+            }
+          },
+          "exact_duplicate_excess": 0,
+          "whitespace_normalized_duplicate_excess": 0,
+          "human_ids_first": [
+            3000,
+            3001,
+            3002
+          ]
+        }
+      },
+      "cross_domain_exact_text_overlap": 0
+    }
+  },
+  "multistage_file_full_audit": {
+    "rows": 95991,
+    "bytes": 137012028,
+    "counts": {
+      "label": {
+        "0": 12000,
+        "1": 83991
+      },
+      "model": {
+        "human": 12000,
+        "deepseek": 11991,
+        "solar": 12000,
+        "qwen72b": 12000,
+        "qwen32b": 12000,
+        "qwen14b": 12000,
+        "llama3.3": 12000,
+        "mistral": 12000
+      },
+      "source": {
+        "qa": 23991,
+        "abstracts": 24000,
+        "reviews": 24000,
+        "news": 24000
+      },
+      "prompt_style": {
+        "human": 12000,
+        "self-refine": 83991
+      }
+    },
+    "missing_required_fields": {},
+    "matching_human_text_rows_in_main": 12000,
+    "unique_human_keys": 12000,
+    "unique_ai_source_keys": 12000,
+    "ai_source_keys_without_human_in_main": 0,
+    "sha256": "69b571b215acd6261bf6a30ca851ea8002853f509dad5583db70575b6fea3d18"
+  },
+  "combined_text_rows_with_humans_counted_once": 515422,
+  "download_samples": {
+    "linguistic_analysis.csv": {
+      "url": "https://huggingface.co/datasets/yuxixia/AI-detector-generalization-benchmark/resolve/a8bcd10fbe1f522fe47fd56f4fc75a54f36a276c/data/linguistic_analysis.csv",
+      "http_status": 206,
+      "bytes_read": 500000,
+      "content_range": null,
+      "columns": [
+        "",
+        "text",
+        "MATTR",
+        "L_MATTR",
+        "LEX_DEN",
+        "UNIQUE_WORDS",
+        "FLESCH",
+        "GUNNING_FOG",
+        "AVG_SENT_LEN",
+        "LONG_SENTS",
+        "SHORT_SENTS",
+        "SENT_LEN_STD",
+        "len_in_characters",
+        "label",
+        "prompt_style",
+        "model",
+        "item_id",
+        "source",
+        "polarity",
+        "subjectivity"
+      ]
+    },
+    "linguistic_analysis_multistage.csv": {
+      "url": "https://huggingface.co/datasets/yuxixia/AI-detector-generalization-benchmark/resolve/a8bcd10fbe1f522fe47fd56f4fc75a54f36a276c/data/linguistic_analysis_multistage.csv",
+      "http_status": 206,
+      "bytes_read": 500000,
+      "content_range": null,
+      "columns": [
+        "",
+        "text",
+        "MATTR",
+        "L_MATTR",
+        "LEX_DEN",
+        "UNIQUE_WORDS",
+        "FLESCH",
+        "GUNNING_FOG",
+        "AVG_SENT_LEN",
+        "LONG_SENTS",
+        "SHORT_SENTS",
+        "SENT_LEN_STD",
+        "len_in_characters",
+        "label",
+        "prompt_style",
+        "model",
+        "item_id",
+        "source",
+        "polarity",
+        "subjectivity"
+      ]
+    },
+    "stylometric_data_full.csv": {
+      "url": "https://huggingface.co/datasets/yuxixia/AI-detector-generalization-benchmark/resolve/a8bcd10fbe1f522fe47fd56f4fc75a54f36a276c/data/stylometric_data_full.csv",
+      "http_status": 206,
+      "bytes_read": 500000,
+      "content_range": null,
+      "columns": [
+        "",
+        "text",
+        "POS_VERB",
+        "POS_NOUN",
+        "POS_ADJ",
+        "POS_ADV",
+        "POS_DET",
+        "POS_INTJ",
+        "POS_CONJ",
+        "POS_PART",
+        "POS_NUM",
+        "POS_PREP",
+        "POS_PRO",
+        "label",
+        "prompt_style",
+        "model",
+        "item_id",
+        "source",
+        "L_CONT_A",
+        "L_FUNC_A",
+        "L_CONT_T",
+        "L_FUNC_T",
+        "L_PROPER_NAME",
+        "L_PERSONAL_NAME",
+        "L_POSSESSIVES",
+        "L_ADJ_POSITIVE",
+        "L_ADJ_COMPARATIVE",
+        "L_ADJ_SUPERLATIVE",
+        "L_ADV_POSITIVE",
+        "L_ADV_COMPARATIVE",
+        "L_ADV_SUPERLATIVE",
+        "ST_REPETITIONS_WORDS",
+        "ST_REPETITIONS_SENT",
+        "L_I_PRON",
+        "L_HE_PRON",
+        "L_SHE_PRON",
+        "L_IT_PRON",
+        "L_YOU_PRON",
+        "L_WE_PRON",
+        "L_THEY_PRON",
+        "L_ME_PRON",
+        "L_YOU_OBJ_PRON",
+        "L_HIM_PRON",
+        "L_HER_OBJECT_PRON",
+        "L_IT_OBJECT_PRON",
+        "L_US_PRON",
+        "L_THEM_PRON",
+        "L_MY_PRON",
+        "L_YOUR_PRON",
+        "L_HIS_PRON",
+        "L_HER_PRON",
+        "L_ITS_PRON",
+        "L_OUR_PRON",
+        "L_THEIR_PRON",
+        "L_YOURS_PRON",
+        "L_THEIRS_PRON",
+        "L_HERS_PRON",
+        "L_OURS_PRON",
+        "L_MYSELF_PRON",
+        "L_YOURSELF_PRON",
+        "L_HIMSELF_PRON",
+        "L_HERSELF_PRON",
+        "L_ITSELF_PRON",
+        "L_OURSELVES_PRON",
+        "L_YOURSELVES_PRON",
+        "L_THEMSELVES_PRON",
+        "L_FIRST_PERSON_SING_PRON",
+        "L_SECOND_PERSON_PRON",
+        "L_THIRD_PERSON_SING_PRON",
+        "L_THIRD_PERSON_PLURAL_PRON",
+        "VF_INFINITIVE",
+        "G_PASSIVE",
+        "G_ACTIVE",
+        "G_PRESENT",
+        "G_PAST",
+        "G_FUTURE",
+        "G_MODALS_SIMPLE",
+        "G_MODALS_CONT",
+        "G_MODALS_PERFECT"
+      ]
+    },
+    "Claude/Claude-Haiku/xsum_claude-3-5-haiku-20241022.raw_data.json": {
+      "url": "https://raw.githubusercontent.com/happy-Moer/EvoBench/4c866cd211499744d21d34cbf2f32594064047c0/Claude/Claude-Haiku/xsum_claude-3-5-haiku-20241022.raw_data.json",
+      "bytes": 289956,
+      "sha256": "bb500c0b2bc67b0bc9fa1139f8819660f85cbeca1ab88c2ac2cdef77ddf80072",
+      "type": "dict",
+      "keys": [
+        "original",
+        "sampled"
+      ],
+      "value_types": {
+        "original": "list",
+        "sampled": "list"
+      },
+      "lengths": {
+        "original": 150,
+        "sampled": 150
+      }
+    },
+    "Claude/Claude-Haiku/xsum_claude-3-haiku-20240307.raw_data.json": {
+      "url": "https://raw.githubusercontent.com/happy-Moer/EvoBench/4c866cd211499744d21d34cbf2f32594064047c0/Claude/Claude-Haiku/xsum_claude-3-haiku-20240307.raw_data.json",
+      "bytes": 280853,
+      "sha256": "c1783f72178f28df6367224219891c2e2d9be8ae30df0b078d877cebf97f1b1d",
+      "type": "dict",
+      "keys": [
+        "original",
+        "sampled"
+      ],
+      "value_types": {
+        "original": "list",
+        "sampled": "list"
+      },
+      "lengths": {
+        "original": 150,
+        "sampled": 150
+      }
+    },
+    "Claude/Claude-Haiku/pubmed_claude-3-5-haiku-20241022.raw_data.json": {
+      "url": "https://raw.githubusercontent.com/happy-Moer/EvoBench/4c866cd211499744d21d34cbf2f32594064047c0/Claude/Claude-Haiku/pubmed_claude-3-5-haiku-20241022.raw_data.json",
+      "bytes": 104575,
+      "sha256": "fa572480e6758e5a3358b263f3825471328ac64070ed87ea48ccbcb9e450cc40",
+      "type": "dict",
+      "keys": [
+        "original",
+        "sampled"
+      ],
+      "value_types": {
+        "original": "list",
+        "sampled": "list"
+      },
+      "lengths": {
+        "original": 150,
+        "sampled": 150
+      }
+    },
+    "raid": {
+      "url": "https://dataset.raid-bench.xyz/train_none.csv",
+      "http_status": 200,
+      "bytes_read": 4000000,
+      "content_range": null,
+      "content_length": "801662741",
+      "columns": [
+        "id",
+        "adv_source_id",
+        "source_id",
+        "model",
+        "decoding",
+        "repetition_penalty",
+        "attack",
+        "domain",
+        "title",
+        "prompt",
+        "generation"
+      ],
+      "prefix_rows_including_last_possibly_partial": 1965,
+      "models": [
+        "human",
+        "llama-chat",
+        "mpt"
+      ],
+      "domains": [
+        "abstracts"
+      ]
+    }
+  },
+  "evo_xsum_reference_comparison": {
+    "same_human_sequence": false,
+    "exact_shared_human_strings": 3
+  }
+}
