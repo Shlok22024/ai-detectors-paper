@@ -1,0 +1,4 @@
+experiment,original_paper,our_result,comparable,explanation
+TF-IDF + logistic regression; Mistral zero-shot abstracts,Not reported,Accuracy 0.977778,No matched original baseline,New lexical baseline; newly grouped split; different tokenization and detector.
+DeBERTa-V3-small; Mistral zero-shot abstracts,Accuracy 0.9860 (Table 7),Not run,No,Original neural architecture and split not reproduced; context only.
+XLM-RoBERTa-base; Mistral zero-shot abstracts,Accuracy 0.9835 (Table 7),Not run,No,Original neural architecture and split not reproduced; context only.

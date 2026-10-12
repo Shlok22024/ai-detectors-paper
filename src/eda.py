@@ -118,7 +118,7 @@ def main():
     )
     report = f"""# Dataset overview and split design
 
-Phase 1 completed October 12, 2026. The owner approved the Phase 0 paper, dataset and scope by requesting Phase 1. No detector has been trained and no performance results exist.
+Phase 1 completed October 12, 2026. The owner approved the Phase 0 paper, dataset and scope by requesting Phase 1. This report records preparation and descriptive analysis; model performance is documented separately in the [Phase 2 baseline report](baseline_report.md).
 
 ## Data and provenance
 
@@ -180,7 +180,7 @@ Executed validation includes input checksum verification, label/pair checks, exa
 
 AI assistance was used for implementation, debugging, research interpretation and documentation. These tables and figures are generated from the documented input by the retained scripts. No claim is made that the project owner manually reviewed all texts or independently validated the analyses.
 
-Next phase: train the approved TF-IDF + logistic regression baseline and evaluate the familiar test. Phase 1 ends with preparation and descriptive analysis.
+At the Phase 1 checkpoint, the next step was training the approved TF-IDF + logistic regression baseline. Its completed familiar-test evaluation is documented in the linked Phase 2 report. This report retains the preparation checks and descriptive analysis.
 """
     (ROOT / "report/data_overview.md").write_text(report,encoding="utf-8")
     print(f"Generated five summary tables, three figures and report/data_overview.md from {len(df):,} texts.")

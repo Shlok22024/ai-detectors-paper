@@ -1,4 +1,4 @@
-# Reproduce Phase 1
+# Reproduce Phases 1 and 2
 
 Use Python 3.12. The current execution was verified on Python 3.12.14 on Windows, using the versions in `requirements.txt`. Run commands from the repository root.
 
@@ -9,6 +9,8 @@ python -m venv .venv
 & .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 & .\.venv\Scripts\python.exe src\prepare_data.py
 & .\.venv\Scripts\python.exe src\eda.py
+& .\.venv\Scripts\python.exe src\train_baseline.py
+& .\.venv\Scripts\python.exe src\report_baseline.py
 & .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 & .\.venv\Scripts\python.exe -m pip check
 ```
@@ -22,6 +24,8 @@ python3.12 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
 .venv/bin/python src/prepare_data.py
 .venv/bin/python src/eda.py
+.venv/bin/python src/train_baseline.py
+.venv/bin/python src/report_baseline.py
 .venv/bin/python -m unittest discover -s tests -v
 .venv/bin/python -m pip check
 ```
@@ -45,4 +49,19 @@ The split manifest is the authority for subsequent phases: abstracts supply trai
 
 The three regression tests address candidate-filter correctness versus exhaustive synthetic comparisons, transitive source grouping and cross-domain split exclusion. They do not validate dataset authorship or independently replicate the paper. Phase 1 validation also reran preparation in the requested E: clone and confirmed identical processed-file and manifest hashes, checked dependency consistency and visually inspected all three final charts.
 
-The original paper's neural detector, original split membership and complete benchmark are not reproduced. No baseline or generalization performance has been computed during Phase 1.
+## Phase 2 outputs and validation
+
+Baseline training accepts the frozen Phase 1 corpus and manifest only if their checksums agree with the preparation record. It fits on abstract training text, evaluates abstract validation and then the familiar final test, and produces no news predictions. Its configuration and threshold were fixed in `research/phase2_protocol.md` before fitting. The convergence check fails on optimizer warnings; there is no hyperparameter search or validation refit.
+
+- `models/baseline.joblib`: local saved TF-IDF/logistic pipeline, ignored by Git. Regenerate it with the training command; keep it for Phase 3.
+- `outputs/tables/baseline_predictions.csv`: text-free validation and familiar-test identifiers, released labels, probabilities and decisions.
+- `outputs/tables/baseline_metrics.csv`: class counts, confusion counts, metrics and source-component bootstrap intervals.
+- `outputs/tables/baseline_run.json`: input/output checksums, code commit, parameters, runtime and package versions.
+- `outputs/tables/paper_baseline_comparison.csv`: original neural values and the explicit limits of comparison.
+- `outputs/figures/baseline_confusion_matrix.png` and `report/baseline_report.md`: generated familiar-test result presentation.
+
+The report command verifies prediction and metric hashes and separately recalculates confusion counts and metrics from the saved predictions. Reloading the saved model was checked against the original validation probabilities. Four additional tests cover hand-calculated error rates, threshold ties and no-positive predictions, intact-pair bootstrap sampling and unchanged vocabulary when transforming held-out-only words. Together with Phase 1, seven regression tests pass.
+
+Repeating training with the same locked input and parameters is a reproducibility check, not another tuning run. Record timestamps and durations may change; compare prediction and metric hashes to assess deterministic results. Numeric operations use one thread, and exact cross-platform equality has not been tested.
+
+The original paper's neural detector, original split membership and complete benchmark are not reproduced. Phase 2 reports the familiar-domain baseline only; news generalization is deferred to Phase 3.

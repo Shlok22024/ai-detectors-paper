@@ -1,0 +1,73 @@
+{
+  "completed_at_utc": "2026-10-12T22:24:52.060302+00:00",
+  "code_base_commit": "493ea6260fe57dc4141e048b55afb1aac0ef8732",
+  "training_script_sha256": "68f20e4765af57707cd1c2f412ab8d52f5b8182eb284297d641030b34ccfe76b",
+  "protocol_sha256": "f600342d7620bebcdf5ed7302e67ff827a402f4990bba81502fc22b72aff9c62",
+  "processed_sha256": "63d5cd936eb628850454dfbeb05541288191334b0fc2afa1d41dda84bfe061f1",
+  "manifest_sha256": "57868a78ad6b02f56e7dd4c33e3af8a6aa1515df04221a1a9e3cbc6089a1b611",
+  "model_sha256": "d60bc0c1fd4e211a08f5df2e0f56c1a44acafff535abc339e1e59915cc9b6cee",
+  "predictions_sha256": "3a39a14bb3c1c3c178cb4ed224a5a9228d1967826f79b84b19f43f27281a76e3",
+  "metrics_sha256": "483c469480c820116e5f86d62646d882a95b9eae6d86ef1a9c87ef23d79a68b5",
+  "python_version": "3.12.14",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "package_versions": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.7.0"
+  },
+  "training_texts": 3000,
+  "training_source_items": 1500,
+  "training_class_counts": {
+    "0": 1500,
+    "1": 1500
+  },
+  "fitted_features": 30000,
+  "training_matrix_nonzero_values": 561811,
+  "converged": true,
+  "solver_iterations": [
+    19
+  ],
+  "fit_seconds": 1.313575500040315,
+  "total_seconds": 8.055302200024016,
+  "numeric_threads": 1,
+  "tfidf_parameters": {
+    "ngram_range": [
+      1,
+      2
+    ],
+    "max_features": 30000,
+    "min_df": 2,
+    "max_df": 1.0,
+    "lowercase": true,
+    "token_pattern": "(?u)\\b\\w\\w+\\b",
+    "stop_words": null,
+    "norm": "l2",
+    "smooth_idf": true,
+    "use_idf": true,
+    "sublinear_tf": false
+  },
+  "logistic_parameters": {
+    "C": 1.0,
+    "l1_ratio": 0.0,
+    "solver": "lbfgs",
+    "max_iter": 1000,
+    "tol": 0.0001,
+    "class_weight": null,
+    "fit_intercept": true,
+    "random_state": 42
+  },
+  "threshold": 0.5,
+  "bootstrap_draws": 1000,
+  "bootstrap_seeds": {
+    "validation": 42,
+    "test_familiar": 43
+  },
+  "bootstrap_unit": "intact leakage component",
+  "hyperparameter_search": false,
+  "refit_on_validation": false,
+  "news_predictions_produced": false,
+  "saved_model_reload_predictions_identical": true
+}
