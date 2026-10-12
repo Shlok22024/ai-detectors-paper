@@ -1,0 +1,15 @@
+check,count
+missing_or_sentinel_text,0
+missing_or_sentinel_label,0
+missing_or_sentinel_model,0
+missing_or_sentinel_prompt_style,0
+missing_or_sentinel_source,0
+missing_or_sentinel_item_id,0
+exact_excess,0
+whitespace_normalized_excess,0
+invalid_labels,0
+unpaired_source_items,0
+near_duplicate_pairs,0
+cross_source_near_duplicate_pairs,0
+source_group_split_overlap,0
+component_split_overlap,0

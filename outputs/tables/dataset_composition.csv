@@ -1,0 +1,5 @@
+domain,model,label,texts
+abstracts,human,0,3000
+abstracts,mistral,1,3000
+news,human,0,3000
+news,mistral,1,3000

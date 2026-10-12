@@ -1,6 +1,6 @@
 # Paper and dataset feasibility: AI detector generalization
 
-Verified: October 12, 2026. Status: Phase 0 complete; owner approval pending. No detector has been trained or evaluated.
+Verified: October 12, 2026. This is the historical Phase 0 assessment. The owner subsequently approved this scope by requesting Phase 1; see [the data overview](../report/data_overview.md) for completed Phase 1 checks. No detector has been trained or evaluated.
 
 ## Recommendation
 
@@ -110,10 +110,10 @@ Allow roughly 2 GB temporary disk space for the recommended source file, paper c
 
 Known limitations: new split assignment; a different detector; released preprocessing rather than independently recreated preprocessing; source/domain and length changes together; limited upstream authorship metadata; unverified near duplicates and pretraining overlap; sparse dataset documentation; no independent human validation; no measured performance yet. Original neural scores cannot be used as expected scores for our logistic baseline.
 
-**Approval requested:** select Xia et al. (EACL 2026), the pinned released main CSV, Mistral zero-shot abstracts-to-news methodological reproduction, and the error/length/coefficient extension above. Approval covers Phase 1 preparation and subsequent phased implementation within this scope. Phase 1 must pause or revise scope if pairing, label or leakage checks materially invalidate it. Full neural replication is a no-go; RAID is an alternative if this release becomes unusable.
+**Approved scope:** Xia et al. (EACL 2026), the pinned released main CSV, Mistral zero-shot abstracts-to-news methodological reproduction, and the error/length/coefficient extension above. The owner approved this scope by requesting Phase 1 on October 12, 2026. Phase 1 must pause or revise scope if pairing, label or leakage checks materially invalidate it. Full neural replication is a no-go; RAID is an alternative if this release becomes unusable.
 
 Phase 0 validation performed: accessed official full papers; extracted relevant methods, limitations and appendices; visually inspected methodology/statistics pages; inspected public repository trees and training source; checked license declarations; downloaded two complete recommended CSVs and counted their rows/conditions; inspected pairing, blank required fields, exact duplicates and selected length distributions; downloaded three complete EvoBench JSON files; inspected a RAID CSV prefix and endpoint size. No model performance, hypothesis tests, independent replication or project-owner review occurred.
 
 Files at this checkpoint: this report, `research/feasibility_evidence.json`, planning README and `.gitignore`. Research scratch files and downloaded data remain outside the tracked repository. A local Git checkpoint records the report; the actual hash and working-tree state are reported in the chat after committing. No GitHub remote was supplied, so this checkpoint cannot be pushed yet. Next phase: dependency setup, dataset preparation, EDA and final split construction **after explicit owner approval**.
 
-AI assistance was used for research retrieval, feasibility inspection and drafting this report. Dataset counts came from executed inspection code and downloaded files. The project owner has not yet reviewed or approved this report, and no independent validation is claimed.
+AI assistance was used for research retrieval, feasibility inspection and drafting this report. Dataset counts came from executed inspection code and downloaded files. Scope approval is recorded above; no manual review of all texts or independent validation is claimed. Statements about unperformed checks elsewhere in this report describe the Phase 0 checkpoint; Phase 1 updates are documented in the linked overview.

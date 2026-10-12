@@ -1,0 +1,5 @@
+domain,model,count,min,median,mean,max
+abstracts,human,3000,1001,1317.0,1357.3,2289
+abstracts,mistral,3000,571,1044.5,1071.9,2542
+news,human,3000,944,3570.5,3928.4,10865
+news,mistral,3000,645,2929.0,2954.6,16834

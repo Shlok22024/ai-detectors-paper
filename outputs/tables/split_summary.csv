@@ -1,0 +1,6 @@
+domain,split,texts,source_items,components
+abstracts,test_familiar,1980,990,990
+abstracts,train,3000,1500,1500
+abstracts,validation,1020,510,510
+news,test_shifted,1980,990,990
+news,unused_news,4020,2010,2010
