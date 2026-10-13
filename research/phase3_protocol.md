@@ -1,0 +1,13 @@
+# Phase 3 protocol: fixed-detector domain transfer and error analysis
+
+Recorded October 13, 2026, before news scoring, after owner authorization to start Phase 3. The familiar abstract results are already known; news outcomes are not yet measured.
+
+- Load `models/baseline.joblib` only if its SHA-256 matches the Phase 2 run record. Verify the Phase 1 corpus/manifest and Phase 2 prediction/metric checksums. Do not refit, add vocabulary, tune parameters, calibrate scores or change the 0.5 AI-positive threshold.
+- Score only the 1,980 frozen `test_shifted` news texts (990 paired source items; 990 human and 990 AI). Leave training, validation and unused news out of Phase 3 error summaries. Use the saved familiar-test predictions for the comparison; verify they agree with the loaded model on those abstracts.
+- Report the same seven metrics and confusion counts as Phase 2. Reuse the familiar-test intervals; compute 1,000 intact-component percentile bootstrap draws for news, seed 44.
+- Define changes as **news minus abstracts**, so a negative accuracy/F1 change is a decline and a positive human FPR change is an increase. Estimate 95% intervals with 1,000 draws, independently resampling intact components within the two disjoint domains, seed 45. No paired-domain test, significance labels or model-selection decisions.
+- Error analysis: summarize human false-positive and AI false-negative counts/rates by domain and the approved fixed character bins: `<1,000`, `1,000–1,999`, `2,000–3,999`, `>=4,000`. Preserve explicit denominators, include zero-sample cells as undefined rates, and flag cells with fewer than 30 class-specific texts as small samples. Bins were specified in Phase 0, not chosen after observing errors.
+- Select at most four identified examples: the highest-scoring false-positive human and lowest-scoring false-negative AI text in each domain, breaking score ties by row ID. Keep full texts local; publish IDs, scores, lengths and brief AI-assisted descriptions after actually inspecting them. These intentionally extreme examples do not estimate general error patterns and are not independent authorship verification.
+- Generate the shifted confusion matrix, familiar-versus-shifted performance chart, length error-rate chart, metrics/change tables, text-free predictions and a concise generalization report. Keep coefficient interpretation for Phase 4.
+
+Domain transfer changes writing context and the released source/generation/length conditions together. Results describe this one fitted lexical detector, one generator, one prompt and this sample. They cannot isolate the causal effect of domain or establish reliability across all AI detectors.
