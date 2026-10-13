@@ -3,10 +3,18 @@ import json
 
 import numpy as np
 import pandas as pd
+from scipy.stats import binomtest
 
 from prepare_data import ROOT, file_hash
 
 LENGTH_BINS = ["<1,000","1,000–1,999","2,000–3,999",">=4,000"]
+
+
+def exact_error_interval(errors, total):
+    if not total:
+        return np.nan,np.nan
+    interval = binomtest(errors,total).proportion_ci(confidence_level=.95,method="exact")
+    return float(interval.low),float(interval.high)
 
 
 def length_error_summary(predictions):
@@ -18,10 +26,11 @@ def length_error_summary(predictions):
             for length_bin in LENGTH_BINS:
                 part = data.loc[data.domain.eq(domain)&data.label.eq(label)&data.length_bin.eq(length_bin)]
                 errors = int(part.predicted_label.ne(part.label).sum())
+                low,high = exact_error_interval(errors,len(part))
                 rows.append({"domain":domain,"error_type":error_type,"length_bin":length_bin,
                              "n_class_texts":len(part),"n_errors":errors,
                              "error_rate":errors/len(part) if len(part) else np.nan,
-                             "small_sample":len(part)<30})
+                             "small_sample":len(part)<30,"exact_ci_low":low,"exact_ci_high":high})
     return pd.DataFrame(rows)
 
 
@@ -45,6 +54,17 @@ def main():
     predictions = pd.read_csv(tables / "generalization_predictions.csv",dtype={"item_id":str},float_precision="round_trip")
     summary = length_error_summary(predictions)
     summary.to_csv(tables / "error_rates_by_length.csv",index=False,lineterminator="\n",float_format="%.17g")
+    domain_rows = []
+    for domain in ["abstracts","news"]:
+        for label,error_type in [(0,"false_positive"),(1,"false_negative")]:
+            part = predictions.loc[predictions.domain.eq(domain)&predictions.label.eq(label)]
+            if part.leakage_group.nunique()!=len(part):
+                raise ValueError("Exact binomial intervals require one text per component within class.")
+            errors = int(part.predicted_label.ne(part.label).sum())
+            low,high = exact_error_interval(errors,len(part))
+            domain_rows.append({"domain":domain,"error_type":error_type,"n_class_texts":len(part),
+                                "n_errors":errors,"error_rate":errors/len(part),"exact_ci_low":low,"exact_ci_high":high})
+    pd.DataFrame(domain_rows).to_csv(tables / "domain_error_rates.csv",index=False,lineterminator="\n",float_format="%.17g")
     errors = predictions.loc[predictions.label.ne(predictions.predicted_label)].copy()
     errors["error_type"] = np.where(errors.label.eq(0),"false_positive","false_negative")
     errors.to_csv(tables / "test_errors.csv",index=False,lineterminator="\n",float_format="%.17g")

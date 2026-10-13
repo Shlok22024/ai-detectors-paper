@@ -5,11 +5,16 @@ import unittest
 import pandas as pd
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"src"))
-from analyze_errors import length_error_summary, select_examples
+from analyze_errors import exact_error_interval, length_error_summary, select_examples
 from evaluate_generalization import independent_changes
 
 
 class GeneralizationTests(unittest.TestCase):
+    def test_zero_errors_still_have_nonzero_binomial_upper_limit(self):
+        low,high = exact_error_interval(0,990)
+        self.assertEqual(low,0)
+        self.assertAlmostEqual(high,1-.025**(1/990),places=12)
+
     def test_independent_change_sign_and_intact_pair_resampling(self):
         familiar = pd.DataFrame({"label":[0,1,0,1],"score_ai":[.1,.9,.1,.9],"leakage_group":["a","a","b","b"]})
         shifted = pd.DataFrame({"label":[0,1,0,1],"score_ai":[.1,.1,.1,.1],"leakage_group":["c","c","d","d"]})

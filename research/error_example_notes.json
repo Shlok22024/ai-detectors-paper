@@ -1,0 +1,18 @@
+{
+  "inspection_date": "2026-10-13",
+  "method": "AI-assisted reading of the complete texts selected by the prespecified extreme-error rule; no independent human authorship validation or causal feature attribution",
+  "examples": [
+    {
+      "row_id": "abstracts:2904:human",
+      "description": "Human-labeled computational-tool abstract about vibrational spectroscopy, with simulation benchmarks and future software-development plans."
+    },
+    {
+      "row_id": "abstracts:1642:mistral",
+      "description": "AI-labeled astronomy abstract presenting a dwarf-galaxy candidate with numerical photometry and spectroscopy measurements. The underlying scientific claims were not verified."
+    },
+    {
+      "row_id": "news:5627:mistral",
+      "description": "AI-labeled news-style story about an unusual photograph, with attributed quotations and speculation about an apparent ghost. The depicted events and attributions were not verified."
+    }
+  ]
+}

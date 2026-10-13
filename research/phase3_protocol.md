@@ -11,3 +11,9 @@ Recorded October 13, 2026, before news scoring, after owner authorization to sta
 - Generate the shifted confusion matrix, familiar-versus-shifted performance chart, length error-rate chart, metrics/change tables, text-free predictions and a concise generalization report. Keep coefficient interpretation for Phase 4.
 
 Domain transfer changes writing context and the released source/generation/length conditions together. Results describe this one fitted lexical detector, one generator, one prompt and this sample. They cannot isolate the causal effect of domain or establish reliability across all AI detectors.
+
+## Reporting addition after outcomes were observed
+
+October 13, 2026: news produced zero human false positives, making its nonparametric bootstrap FPR interval `[0,0]`. Add separately labeled, two-sided 95% Clopper–Pearson binomial intervals for class-specific error rates, including length bins. Each evaluated source contributes one text per class and no multi-source components exist, supporting the independent-source interpretation within each class. This does not alter predictions, the threshold or the primary bootstrap difference analysis. The interval method is implemented by [SciPy's exact proportion interval](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats._result_classes.BinomTestResult.proportion_ci.html).
+
+News predicts AI only twice, so precision is a sparse descriptive metric. Preserve the original bootstrap table and disclose its `precision=0` convention for resamples with no predicted positives; do not describe the resulting precision interval as evidence of reliable precision. Qualitative inspection will describe the three available selected errors; no news false-positive example exists.
