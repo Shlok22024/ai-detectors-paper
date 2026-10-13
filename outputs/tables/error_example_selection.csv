@@ -1,0 +1,4 @@
+label,prompt_style,model,item_id,domain,source_group,row_id,leakage_group,split,length_characters,length_words,score_ai,predicted_label,correct,error_type
+0,human,human,2904,abstracts,abstracts:2904,abstracts:2904:human,abstracts:2904,test_familiar,1316,169,0.81776518115845731,1,False,false_positive
+1,zero_shot_baseline,mistral,1642,abstracts,abstracts:1642,abstracts:1642:mistral,abstracts:1642,test_familiar,862,156,0.3200102162182229,0,False,false_negative
+1,zero_shot_baseline,mistral,5627,news,news:5627,news:5627:mistral,news:5627,test_shifted,3250,501,0.0060639192936686242,0,False,false_negative

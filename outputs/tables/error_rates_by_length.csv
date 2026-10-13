@@ -1,0 +1,17 @@
+domain,error_type,length_bin,n_class_texts,n_errors,error_rate,small_sample,exact_ci_low,exact_ci_high
+abstracts,false_positive,"<1,000",0,0,,True,,
+abstracts,false_positive,"1,000–1,999",989,25,0.025278058645096056,False,0.016423915635226802,0.037090363954574053
+abstracts,false_positive,"2,000–3,999",1,0,0,True,0,0.97499999999999998
+abstracts,false_positive,">=4,000",0,0,,True,,
+abstracts,false_negative,"<1,000",399,10,0.025062656641604009,False,0.012082487480619847,0.045607091405141451
+abstracts,false_negative,"1,000–1,999",589,9,0.015280135823429542,False,0.0070102353864223282,0.028807592207458592
+abstracts,false_negative,"2,000–3,999",2,0,0,True,0,0.841886116991581
+abstracts,false_negative,">=4,000",0,0,,True,,
+news,false_positive,"<1,000",1,0,0,True,0,0.97499999999999998
+news,false_positive,"1,000–1,999",126,0,0,False,0,0.028852406856721007
+news,false_positive,"2,000–3,999",448,0,0,False,0,0.008200298529035463
+news,false_positive,">=4,000",415,0,0,False,0,0.0088494769785054279
+news,false_negative,"<1,000",1,1,1,True,0.025000000000000022,1
+news,false_negative,"1,000–1,999",80,80,1,False,0.9549359649323077,1
+news,false_negative,"2,000–3,999",821,821,1,False,0.99551692509072165,1
+news,false_negative,">=4,000",88,86,0.97727272727272729,False,0.92030269102867845,0.9972356729238302

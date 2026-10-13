@@ -1,0 +1,25 @@
+{
+  "completed_at_utc": "2026-10-13T21:00:54.076921+00:00",
+  "code_base_commit": "c468df7acdbab9d81dc8fb0a808704bcaa331c42",
+  "evaluation_script_sha256": "bf1145c102982bd1b3efb76074c28eb28179bf07307f7945b1a1d7435e1bcfdb",
+  "protocol_sha256": "7419f3ad459feb55eea6af035c68c1aa63ce378934cf7d1c0018f2fd9997e3e4",
+  "baseline_model_sha256": "d60bc0c1fd4e211a08f5df2e0f56c1a44acafff535abc339e1e59915cc9b6cee",
+  "processed_sha256": "63d5cd936eb628850454dfbeb05541288191334b0fc2afa1d41dda84bfe061f1",
+  "manifest_sha256": "57868a78ad6b02f56e7dd4c33e3af8a6aa1515df04221a1a9e3cbc6089a1b611",
+  "baseline_predictions_sha256": "3a39a14bb3c1c3c178cb4ed224a5a9228d1967826f79b84b19f43f27281a76e3",
+  "output_sha256": {
+    "predictions": "c2a7f76f9fafe3e3cd1a20932edbd945aafc770553edd82014b5a85a660c2602",
+    "metrics": "5b90ee80bd0d5936b6a3a05d45000062c73e2e0abac1b8ebb90af8e0407d1dce",
+    "changes": "fe9fed059300c12daea5eb9461c2e6ab8957bee255042fa576db85170f518891"
+  },
+  "threshold": 0.5,
+  "bootstrap_draws": 1000,
+  "news_interval_seed": 44,
+  "independent_change_seed": 45,
+  "refit": false,
+  "recalibration": false,
+  "unused_news_scored": false,
+  "phase2_familiar_predictions_reproduced": true,
+  "model_unchanged_after_scoring": true,
+  "seconds": 8.74096720002126
+}
