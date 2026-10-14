@@ -1,4 +1,4 @@
-# Reproduce Phases 1–3
+# Reproduce Phases 1–4
 
 Use Python 3.12. The current execution was verified on Python 3.12.14 on Windows, using the versions in `requirements.txt`. Run commands from the repository root.
 
@@ -14,6 +14,8 @@ python -m venv .venv
 & .\.venv\Scripts\python.exe src\evaluate_generalization.py
 & .\.venv\Scripts\python.exe src\analyze_errors.py
 & .\.venv\Scripts\python.exe src\report_generalization.py
+& .\.venv\Scripts\python.exe src\interpret_model.py
+& .\.venv\Scripts\python.exe src\report_interpretation.py
 & .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 & .\.venv\Scripts\python.exe -m pip check
 ```
@@ -32,6 +34,8 @@ python3.12 -m venv .venv
 .venv/bin/python src/evaluate_generalization.py
 .venv/bin/python src/analyze_errors.py
 .venv/bin/python src/report_generalization.py
+.venv/bin/python src/interpret_model.py
+.venv/bin/python src/report_interpretation.py
 .venv/bin/python -m unittest discover -s tests -v
 .venv/bin/python -m pip check
 ```
@@ -85,3 +89,15 @@ The domain evaluation command loads the Phase 2 model only after checking its ch
 News metric intervals use 1,000 intact-component bootstrap draws (seed 44). Difference intervals independently resample disjoint components in both domains (seed 45); this is not paired-domain testing. An exact Clopper–Pearson error-rate interval was added after zero news false positives exposed a degenerate bootstrap interval. The reason and timing are recorded in the protocol; no prediction or threshold changed. Precision bootstrap draws with no predicted positives retain the prior zero convention, and sparse news precision is explicitly treated as uninformative.
 
 The four Phase 3 tests check independent-change direction and rejection of reused components, length-bin boundaries and empty cells, deterministic extreme-example selection, and the nonzero exact upper limit for zero observed errors. Eleven regression tests pass in total. Reporting checks metric/confusion counts and length-bin totals against saved predictions; all three Phase 3 charts were visually inspected.
+
+## Phase 4 outputs and validation
+
+Interpretation verifies the saved model, prepared data and final-test predictions, then transforms training/final-test texts with the fitted vectorizer. It never calls fit or changes a threshold. It selects 15 coefficients per direction with lexical tie-breaking, records document presence by class/domain, and decomposes the fixed linear score into intercept plus positive and negative weighted contributions.
+
+- `coefficient_features.csv`, `score_decomposition.csv`, `ai_feature_contribution_changes.csv` and `interpretation_run.json` under `outputs/tables/`: selected terms, score/linear-contribution summaries, selected AI-domain contribution changes and verification evidence.
+- `outputs/figures/coefficient_features.png` and `score_distributions.png`: the two interpretation figures.
+- `report/interpretation_report.md`: observed associations, exact arithmetic accounting, source-generation controls and explanatory limits.
+
+All feature contribution changes sum to the observed mean AI logit change. Logits and probabilities reconstruct the pipeline outputs within floating-point tolerance. Two additional tests verify signed reconstruction and feature-sign/tie selection; 13 tests pass in total. The two final figures were visually inspected. This validates internal calculations, not causal explanations or independent research replication.
+
+The generator identity and zero-shot style are held fixed as release metadata; literal templates, tasks and human source corpora differ between domains. The report cites the official paper and pinned prompt-construction code and explicitly leaves unaudited runtime details unresolved. No standalone `generation_report.md` is claimed: generation conditions are covered in the interpretation report and linked from `generalization_report.md`.

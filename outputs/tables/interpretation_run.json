@@ -1,0 +1,20 @@
+{
+  "completed_at_utc": "2026-10-14T01:30:51.619981+00:00",
+  "code_base_commit": "6e35b5aa4ccd8a876acd0da0c5716231fd8e2bf8",
+  "script_sha256": "3661b0ecf0bad49b60997c2cdf3486607848b9b5d761e206749ed21bc7d561df",
+  "model_sha256": "d60bc0c1fd4e211a08f5df2e0f56c1a44acafff535abc339e1e59915cc9b6cee",
+  "predictions_sha256": "c2a7f76f9fafe3e3cd1a20932edbd945aafc770553edd82014b5a85a660c2602",
+  "intercept": 0.46449822288427955,
+  "ai_mean_logit_change_news_minus_abstracts": -4.402568120595874,
+  "all_feature_contribution_changes_sum": -4.402568120595872,
+  "logit_reconstruction_max_abs_error": 7.993605777301127e-15,
+  "probability_reconstruction_max_abs_error": 7.771561172376096e-16,
+  "model_unchanged": true,
+  "refit": false,
+  "threshold_optimized": false,
+  "output_sha256": {
+    "coefficient_features": "7e5b20e430b0aac1a0af8cbe9e929cf09b9845c4393443e4af353e01a1a7a35e",
+    "score_decomposition": "b17cd8e9d94b111c981308953135a223bfbd4225ee7107751cfce35722baa078",
+    "ai_feature_contribution_changes": "d01ad0c14a69ce0a3f5f51c811712a90483df2ab13011c3cbc5ea99355d0b849"
+  }
+}

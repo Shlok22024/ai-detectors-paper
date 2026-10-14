@@ -8,7 +8,7 @@ Phase 3 completed October 13, 2026. The frozen Phase 2 detector was applied to t
 
 The detector identified only **2 of 990 AI news texts** and missed **988** (99.80% FNR). It labeled all 990 human news texts correctly. It predicted human for 1,978 of 1,980 texts, making accuracy close to the 50% always-human reference on this balanced sample. That reference is a mathematical class-balance comparison, not another fitted model.
 
-This is evidence of poor fixed-threshold transfer for this lexical detector in this experiment. It is not evidence that every AI detector fails or that writing domain alone caused the change.
+This is evidence of poor fixed-threshold transfer for this lexical detector in this experiment. It is not evidence that every AI detector fails or that writing domain alone caused the change. The [Phase 4 interpretation report](interpretation_report.md) documents the literal prompt/task and human-source differences bundled into this comparison, alongside coefficient and score analysis.
 
 ![Domain performance](../outputs/figures/generalization_performance.png)
 
@@ -77,8 +77,8 @@ These are intentionally extreme errors, not a representative sample. Their descr
 
 ## Limits, reproduction and next phase
 
-This adapts Xia et al.'s cross-dataset design to one TF-IDF/logistic detector, one Mistral generator, one zero-shot prompt and a newly grouped split. Original neural scores are not matched benchmarks. Author identities, original source URLs and model pretraining records remain unavailable. Lexical near-duplicate checks cannot eliminate paraphrases or all source overlap. Released cleaning and length differences can provide shortcuts, and equal class prevalence is artificial.
+This adapts Xia et al.'s cross-dataset design to one TF-IDF/logistic detector, one Mistral generator, one zero-shot prompt style and a newly grouped split. Abstracts are generated from category/title metadata; news is generated from article highlights. Literal prompts, generation tasks and human source corpora differ, so this study does not isolate their separate effects. Original neural scores are not matched benchmarks. Author identities, original source URLs and model pretraining records remain unavailable. Lexical near-duplicate checks cannot eliminate paraphrases or all source overlap. Released cleaning and length differences can provide shortcuts, and equal class prevalence is artificial.
 
 After Phases 1 and 2, run `python src/evaluate_generalization.py`, `python src/analyze_errors.py`, then `python src/report_generalization.py`. Retain the saved Phase 2 pipeline: its checksum is verified. The evaluation script never calls fit. Published outputs contain identifiers, scores, counts, summaries and figures, not text. The report verifies saved metric counts and length-bin totals against the predictions. Eleven regression tests cover the original checks plus independent-change sign, component exclusion, length-bin boundaries/empty cells, deterministic error selection and the exact zero-error upper bound. These are internal checks, not independent research replication.
 
-The generalization question now has a measured answer for the approved experiment: strong familiar-domain performance did not survive this fixed-detector domain transfer. Phase 4 will inspect coefficients and distinguish predictive associations from proposed explanations. The overall portfolio project is not yet complete.
+The generalization question now has a measured answer for the approved experiment: strong familiar-domain fixed-threshold performance did not survive this distribution change, while meaningful ranking ability remained. Coefficient and score interpretation are documented in the linked Phase 4 report. The overall portfolio project is not yet complete.
